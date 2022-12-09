@@ -1,3 +1,6 @@
+
+""" Entry point to web application """
+
 from web import create_app
 
 app = create_app()
