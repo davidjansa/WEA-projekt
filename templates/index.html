@@ -60,7 +60,7 @@
                     </li>
                     <li class="nav-bar-item">
                         <label for="text_input">Text: </label>
-                        <input id="index_input" type="text" name="text_input" placeholder="enter todo..." autocomplete="off" autofocus>
+                        <input id="text_input" type="text" name="text_input" placeholder="enter todo..." autocomplete="off" autofocus>
                     </li>
                     <li class="nav-bar-item">
                         <label for="done_input">Done: </label>
@@ -97,9 +97,17 @@
             <form action="/fill_bar" method="post">
                 <ul class="todos-list">
                 {% for todo in data %}
-                    {% if todo_bar != None %}
-                        {% if todo._id|int() == todo_bar._id|int() %}
-                            <input class="todos-list-card selected" type="submit" name="todo_input" value="{{todo}}">
+                    <li class="no-design">
+                        {% if todo_bar != None %}
+                            {% if todo._id|int() == todo_bar._id|int() %}
+                                <input class="todos-list-card selected" type="submit" name="todo_input" value="{{todo}}">
+                            {% else %}
+                                {% if todo.done %}
+                                    <input class="todos-list-card done" type="submit" name="todo_input" value="{{todo}}">
+                                {% else %}
+                                    <input class="todos-list-card undone" type="submit" name="todo_input" value="{{todo}}">
+                                {% endif %}
+                            {% endif %}
                         {% else %}
                             {% if todo.done %}
                                 <input class="todos-list-card done" type="submit" name="todo_input" value="{{todo}}">
@@ -107,13 +115,7 @@
                                 <input class="todos-list-card undone" type="submit" name="todo_input" value="{{todo}}">
                             {% endif %}
                         {% endif %}
-                    {% else %}
-                        {% if todo.done %}
-                            <input class="todos-list-card done" type="submit" name="todo_input" value="{{todo}}">
-                        {% else %}
-                            <input class="todos-list-card undone" type="submit" name="todo_input" value="{{todo}}">
-                        {% endif %}
-                    {% endif %}
+                    </li>
                 {% endfor %}
                 </ul>
             </form>
