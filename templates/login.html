@@ -20,7 +20,7 @@
                         <label for="username_input" class="form-label">Username</label>
                     </div>
                     <div class="form-item field">
-                        <input type="text" name="username_input" placeholder="user123" autocomplete="off" autofocus class="form-control"/>
+                        <input id="username_input" type="text" name="username_input" placeholder="user123" autocomplete="off" autofocus class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
@@ -28,18 +28,18 @@
                         <label for="password_input" class="form-label">Password</label>
                     </div>
                     <div class="form-item field">
-                        <input type="password" name="password_input" placeholder="●●●●●●" autocomplete="off" class="form-control"/>
+                        <input id="password_input" type="password" name="password_input" placeholder="●●●●●●" autocomplete="off" class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
                     <div id="login" class="form-item">
-                        <input type="submit" value="login"/>
+                        <input type="submit" value="login">
                     </div>
                 </div>
             </div>
         </form>
 
-        {% block app_content %}
+        {% block invalid_user %}
             {% with messages = get_flashed_messages() %}
                 {% for message in messages %}
                     <div class="form-item">

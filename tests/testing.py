@@ -58,22 +58,6 @@ def test_get_json_content_page(client):
     response = client.get("/json_content", follow_redirects=True)
     assert response.request.path == "/json_content"
 
-def test_session_post_fill_bar_page(client):
-    # 'todo_bar' variable shouldnt be in Session
-    """with client.session_transaction() as session:
-        session["todo_bar"] = "rubish"
-    client.post("/clear_bar", follow_redirects=True)
-    assert session.get("todo_bar") == "rubish"""
-    """with client:
-        response = client.post("/fill_bar", data={
-            "todo_input": "1 | test | TODO"
-        }, follow_redirects=True)
-        assert session.get("todo_bar") == {"_id": "1", "text": "test", "done": "TODO"}"""
-    """with client.session_transaction() as session:
-        session["todo_bar"] = "rubish"
-    response = client.post("/clear_bar", data={})
-    assert session["todo_bar"] == None"""
-
 def test_session_post_fill_bar_page_content_type(client):
     # 'todo_bar' variable shouldnt be in Session
     with client.session_transaction() as session:

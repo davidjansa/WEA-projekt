@@ -100,7 +100,6 @@ def select(filt):
     Returns:
         Query object: Selected Todos from the database
     """
-    if filt == None:
+    if filt is None:
         return Todo.query.all()
-    else:
-        return Todo.query.filter(Todo.done == filt)     
+    return Todo.query.filter(Todo.done == filt)     

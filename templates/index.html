@@ -16,76 +16,76 @@
                 <ul class="nav-bar">
                     <li class="nav-bar-item">
                         <label for="index_input">Index: </label>
-                        <input type="text" name="index_input" value="{{ todo_bar['_id'] }}" readonly/>
+                        <input id="index_input" type="text" name="index_input" value="{{ todo_bar['_id'] }}" readonly>
                     </li>
                     <li class="nav-bar-item">
                         <label for="text_input">Text: </label>
-                        <input type="text" name="text_input" value="{{ todo_bar['text'] }}" autocomplete="off" autofocus/>
+                        <input id="text_input" type="text" name="text_input" value="{{ todo_bar['text'] }}" autocomplete="off" autofocus>
                     </li>
                     <li class="nav-bar-item">
                         <label for="done_input">Done: </label>
                         {% if todo_bar["done"] == "DONE" %}
-                            <input type="checkbox" name="done_input" checked/>
+                            <input id="done_input" type="checkbox" name="done_input" checked>
                         {% else %}
-                            <input type="checkbox" name="done_input"/>
+                            <input id="done_input" type="checkbox" name="done_input">
                         {% endif %}
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="add" formaction="/add" disabled/>
+                        <input type="submit" value="add" formaction="/add" disabled>
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="update" formaction="/update"/>
+                        <input type="submit" value="update" formaction="/update">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="delete" formaction="/delete"/>
+                        <input type="submit" value="delete" formaction="/delete">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="filter" formaction="/filters"/>
+                        <input type="submit" value="filter" formaction="/filters">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="cancel" formaction="/clear_bar"/>
+                        <input type="submit" value="cancel" formaction="/clear_bar">
                     </li>
                     <li class="nav-bar-item">
                         <input type="submit" value="get json" formaction="/json_content">
                     </li>
                     <li class="nav-bar-item logout">
-                        <input type="submit" value="logout" formaction="/logout"/>
+                        <input type="submit" value="logout" formaction="/logout">
                     </li>
                 </ul>
                 {% else %}
                 <ul class="nav-bar">
                     <li class="nav-bar-item">
                         <label for="index_input">Index: </label>
-                        <input type="text" name="index_input" readonly/>
+                        <input id="index_input" type="text" name="index_input" readonly>
                     </li>
                     <li class="nav-bar-item">
                         <label for="text_input">Text: </label>
-                        <input type="text" name="text_input" placeholder="enter todo..." autocomplete="off" autofocus/>
+                        <input id="index_input" type="text" name="text_input" placeholder="enter todo..." autocomplete="off" autofocus>
                     </li>
                     <li class="nav-bar-item">
                         <label for="done_input">Done: </label>
-                        <input type="checkbox" name="done_input"/>
+                        <input id="done_input" type="checkbox" name="done_input">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="add" formaction="/add"/>
+                        <input type="submit" value="add" formaction="/add">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="update" formaction="/update" disabled/>
+                        <input type="submit" value="update" formaction="/update" disabled>
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="delete" formaction="/delete" disabled/>
+                        <input type="submit" value="delete" formaction="/delete" disabled>
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="filter" formaction="/filters"/>
+                        <input type="submit" value="filter" formaction="/filters">
                     </li>
                     <li class="nav-bar-item">
-                        <input type="submit" value="cancel" formaction="/clear_bar" disabled/>
+                        <input type="submit" value="cancel" formaction="/clear_bar" disabled>
                     </li>
                     <li class="nav-bar-item">
                         <input type="submit" value="get json" formaction="/json_content">
                     </li>
                     <li class="nav-bar-item logout">
-                        <input type="submit" value="logout" formaction="/logout"/>
+                        <input type="submit" value="logout" formaction="/logout">
                     </li>
                 </ul>
                 {% endif %}

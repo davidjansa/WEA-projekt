@@ -28,6 +28,11 @@ class Todo(db.Model):
         return f"{self._id} | {self.text} | {done}"
 
     def to_dict(self):
+        """Get Todo object in JSON format
+
+        Returns:
+            dict: Todo object in JSON format
+        """
         return dict(id=self._id, text=self.text, done=self.done)
 
 class User(UserMixin, db.Model):

@@ -54,9 +54,9 @@ def filters():
     Returns:
         Redirect to 'routes.clear_bar' page
     """
-    if session["filter"] == None:
+    if session["filter"] is None:
         session["filter"] = True
-    elif session["filter"] == True:
+    elif session["filter"] is True:
         session["filter"] = False
     else:
         session["filter"] = None

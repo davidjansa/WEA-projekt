@@ -10,10 +10,10 @@ db = SQLAlchemy()
 login = LoginManager()
 
 def create_app():
-    """Flask app basic configuration 
+    """Flask app basic configuration
 
     Returns:
-        Flask: Flask app
+        app (Flask): Flask app
     """
     app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
